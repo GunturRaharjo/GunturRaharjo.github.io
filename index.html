@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio - Guntur</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVIGASI -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="logo">Beranda<span></span></a>
+      <div class="nav-links">
+        <a href="#profil" class="nav-item">Profil</a>
+        <a href="#tentang" class="nav-item">Tentang</a>
+        <a href="#karya" class="nav-item">Portofolio</a>
+        <a href="#pkl" class="nav-item">Kegiatan PKL</a>
+        <a href="#kontak" class="nav-item">Kontak</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- WADAH GESER KE SAMPING (SLIDER) -->
+  <div class="horizontal-slider">
+
+    <!-- HERO SECTION -->
+    <section id="home" class="container hero slide-section">
+      <div class="slide-content">
+        <span class="badge">Siswa DKV & Creative Explorer</span>
+        <h1 class="hero-title">
+          Mengeksplorasi Ide Lewat <br>
+          <span class="gradient-text">Desain Visual & Teknologi.</span>
+        </h1>
+        <p class="hero-desc">
+          Haloo!!  Aku Guntur Raharjo Putra. Saat ini fokus belajar Digital Imaging, branding, dan UI/UX design sambil bereksplorasi Seputar Informatika.
+        </p>
+        <div class="hero-buttons">
+          <a href="#karya" class="btn-primary">Lihat Karya</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION PROFIL -->
+    <section id="profil" class="section-border slide-section">
+      <div class="container slide-content">
+        <div class="section-header">
+          <h2 class="section-title">Profil </h2>
+        </div>
+        
+        <div class="profile-card" style="background: #18181b; padding: 24px; border-radius: 12px; border: 1px solid #27272a; max-width: 650px;">
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem;">
+            <li><strong>Nama Lengkap:</strong> Guntur Raharjo Putra</li>
+            <li><strong>Status:</strong> Siswa Desain Komunikasi Visual (DKV)</li>
+            <li><strong>Fokus Keahlian:</strong> UI/UX Design, Visual Branding, Digital Imaging</li>
+            <li><strong>Minat Tambahan:</strong> Web Development & Digital Technology</li>
+            <li><strong>Tempat PKL :</strong> PT QUALITY WORKS</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION TENTANG -->
+    <section id="tentang" class="section-border slide-section">
+      <div class="container slide-content">
+        <div class="section-header">
+          <h2 class="section-title">Tentang Saya</h2>
+          <p class="section-desc" style="max-width: 650px; line-height: 1.8; font-size: 1rem;">
+            Sebagai siswa DKV, say tertarik menghubungkan tentang komunikasi visual dengan pengalaman digital. Saya juga mengombinasikan pemahaman tentang warna, typografi, dan komposisi dengan Codingan front-end untuk menciptakan karya yang tidak hanya estetik, tetapi juga fungsional.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION PORTOFOLIO -->
+    <section id="karya" class="section-border slide-section">
+      <div class="container slide-content">
+        <div class="section-header">
+          <h2 class="section-title">Karya & Eksperimen</h2>
+          <p class="section-desc">Beberapa hasil eksplorasi desain dan proyek.</p>
+        </div>
+
+        <div class="portfolio-grid">
+          <!-- Karya 1 -->
+          <article class="card">
+            <div class="card-image">
+              <img src="images/BEAUTY OF THE WOLRD.png" onclick="openModal(this)" alt="Beauty of the World">
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Digital Imaging</span>
+              <h3 class="card-title">Poster Yang memperlihatkan keindahan alam</h3>
+              <p class="card-desc">Penggabungan element visual untuk memperlihatkan ke estetikan alam.</p>
+              <div class="tags-group">
+                <span class="tag-item">Photoshop</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Karya 2 -->
+          <article class="card">
+            <div class="card-image">
+              <img src="images/DAERAH ISTIMEWA YOGYAKARTA v2.png" onclick="openModal(this)" alt="Poster Daerah Istimewa Yogyakarta">
+            </div>
+            <div class="card-body">
+              <span class="card-tag" style="color: #ec4899;">Digital Imaging</span>
+              <h3 class="card-title">Visual Identity Yogyakarta</h3>
+              <p class="card-desc">Pembuatan poster untuk memperkenalkan keindahan Daerah Istimewa Yogyakarta.</p>
+              <div class="tags-group">
+                <span class="tag-item">Photoshop</span>
+              </div>
+            </div>
+          </article>
+            
+          <!-- Karya 3 -->
+          <article class="card">
+            <div class="card-image">
+              <img src="images/mockup kaos ETHEREAL.png" onclick="openModal(this)" alt="Design Kaos Brand Ethereal">
+            </div>
+            <div class="card-body">
+              <span class="card-tag" style="color: #ec4899;">Mockup Design</span>
+              <h3 class="card-title">Design Kaos Brand Ethereal</h3>
+              <p class="card-desc">Pembuatan Desain Kaos pada Brand Ethereal yang memberikan kesan unik dan seram</p>
+              <div class="tags-group">
+                <span class="tag-item">Illustrator</span>
+              </div>
+            </div>
+          </article>
+              
+          <!-- Karya 4 -->
+          <article class="card">
+            <div class="card-image">
+              <img src="images/POTROFOLIO V2 QUALITY WORK-05.png" onclick="openModal(this)" alt="UI/UX Design Aplikasi Pemesanan Tiket Transportasi">
+            </div>
+            <div class="card-body">
+              <span class="card-tag" style="color: #ec4899;">UI/UX Design</span>
+              <h3 class="card-title">Design UI/UX Aplikasi Pemesanan Tiket</h3>
+              <p class="card-desc">Pembuatan Desain UI/UX untuk aplikasi pemesanan tiket transportasi</p>
+              <div class="tags-group">
+                <span class="tag-item">Figma</span>
+                <span class="tag-item">User Research</span>
+              </div>
+            </div>
+          </article>
+              
+          <!-- Karya 5 -->
+          <article class="card">
+            <div class="card-image">
+              <img src="images/THE END OF GAME.png" onclick="openModal(this)" alt="Poster The End of Game">
+            </div>
+            <div class="card-body">
+              <span class="card-tag" style="color: #ec4899;">Digital Imaging</span>
+              <h3 class="card-title">Design Poster The End of Game</h3>
+              <p class="card-desc">Pembuatan Desain Poster untuk memberi tahu bahwa jika sang raja telah runtuh, maka sang pion Bukan lagi sekedar kekalahan</p>
+              <div class="tags-group">
+                <span class="tag-item">Photoshop</span>
+                <span class="tag-item">Digital Art</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Karya 6 -->
+          <article class="card">
+            <div class="card-image">
+              <img src="images/TOYOTA SUPRA MK4.png" onclick="openModal(this)" alt="Poster TOYOTA SUPRA MK4">
+            </div>
+            <div class="card-body">
+              <span class="card-tag" style="color: #ec4899;">Digital Imaging</span>
+              <h3 class="card-title">Design Poster TOYOTA SUPRA MK4</h3>
+              <p class="card-desc">Pembuatan Desain Poster tentang TOYOTA SUPRA MK4 dan penjelasan mengenai Sejarah Mobil tersebut</p>
+              <div class="tags-group">
+                <span class="tag-item">Photoshop</span>
+                <span class="tag-item">Digital Art</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Karya 7 -->
+          <article class="card">
+            <div class="card-image">
+              <img src="images/work shirt tpm fiks.png" onclick="openModal(this)" alt="Mockup Kaos TPM">
+            </div>
+            <div class="card-body">
+              <span class="card-tag" style="color: #ec4899;">Mockup Design</span>
+              <h3 class="card-title">Design Mockup Work Shirt TPM</h3>
+              <p class="card-desc">Pembuatan Mockup Work Shirt untuk Kelas</p>
+              <div class="tags-group">
+                <span class="tag-item">Photoshop</span>
+                <span class="tag-item">Digital Art</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Karya 8 -->
+          <article class="card">
+            <div class="card-image">
+              <img src="images/workshirt dekave mentality.png" onclick="openModal(this)" alt="Mockup workshirt dekave mentality">
+            </div>
+            <div class="card-body">
+              <span class="card-tag" style="color: #ec4899;">Design</span>
+              <h3 class="card-title">Design Work Shirt Dekave Mentality</h3>
+              <p class="card-desc">Pembuatan Desain Work Shirt untuk Kelas</p>
+              <div class="tags-group">
+                <span class="tag-item">Photoshop</span>
+                <span class="tag-item">Digital Art</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION KEGIATAN PKL (BARU) -->
+    <section id="pkl" class="section-border slide-section">
+      <div class="container slide-content">
+        <div class="section-header">
+          <h2 class="section-title">Kegiatan PKL</h2>
+          <p class="section-desc">Pengalaman Praktik Kerja Lapangan di PT QUALITY WORKS</p>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="card">
+            <div class="card-image">
+              <img src="images/WhatsApp Image 2026-08-15 at 23.54.03 (1).jpeg" onclick="openModal(this)" alt="Kegiatan PKL PT Quality Works">
+            </div>
+            <div class="card-body">
+              <span class="card-tag" style="color: #3b82f6;">PT Quality Works</span>
+              <h3 class="card-title">Foto Product</h3>
+              <p class="card-desc">Pengalaman memotret product di PT Quality Works.</p>
+              <div class="tags-group">
+                <span class="tag-item">Photography</span>
+                <span class="tag-item">Product Photography</span>
+              </div>
+            </article>
+
+          <article class="card">
+            <div class="card-image">
+              <img src="images/WhatsApp Image 2026-08-15 at 23.54.03.jpeg" onclick="openModal(this)" alt="Cut off Background Product PT Quality Works">
+            </div>
+            <div class="card-body">
+              <span class="card-tag" style="color: #3b82f6;">PT Quality Works</span>
+              <h3 class="card-title">Cut off Background</h3>
+              <p class="card-desc">Menghapus background dari gambar product.</p>
+              <div class="tags-group">
+                <span class="tag-item">Cut off background</span>
+                <span class="tag-item">Photoshop</span>
+              </div>
+            </article>
+
+                <article class="card">
+            <div class="card-image">
+              <img src="images/WhatsApp Image 2026-08-15 at 23.54.02 (1).jpeg" onclick="openModal(this)" alt=" Editing video Product PT Quality Works">
+            </div>
+            <div class="card-body">
+              <span class="card-tag" style="color: #3b82f6;">PT Quality Works</span>
+              <h3 class="card-title">Editing Video Product </h3>
+              <p class="card-desc">Editing VIdeo product.</p>
+              <div class="tags-group">
+                <span class="tag-item">Editing Video</span>
+                <span class="tag-item">Premiere</span>
+             </div>
+            </article>
+
+            
+                <article class="card">
+            <div class="card-image">
+              <img src="imagesWhatsApp Image 2026-08-15 at 23.54.01.jpeg" onclick="openModal(this)" alt=" Editing video Perjalanan Atlanta PT Quality Works">
+            </div>
+            <div class="card-body">
+              <span class="card-tag" style="color: #3b82f6;">PT Quality Works</span>
+              <h3 class="card-title">Editing Video Perjalanan Atlanta</h3>
+              <p class="card-desc">Editing VIdeo perjalanan di Atlanta 2026.</p>
+              <div class="tags-group">
+                <span class="tag-item">Editing Video</span>
+                <span class="tag-item">Premiere</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER / KONTAK -->
+    <footer id="kontak" class="section-border footer slide-section">
+      <div class="container slide-content">
+        <h2 class="section-title">Mari Terhubung!</h2>
+        <p class="section-desc">Tertarik diskusi seputar desain, kolaborasi proyek, atau sekadar menyapa?</p>
+        
+        <div class="footer-socials">
+          <a href="https://wa.me/6285730976090?text=Halo%20Guntur,%20aku%20mau%20diskusi" target="_blank" style="color: #25D366; font-weight: 600;">WhatsApp</a>
+          <a href="https://www.instagram.com/g.ptraaa?igsh=MWk2amRjM21kZ3plbQ==" target="_blank">Instagram</a>
+          <a href="https://www.tiktok.com/@guntura.a?_r=1&_t=ZS-98uGQPfPH2j" target="_blank">Tiktok</a>
+        </div>
+        
+        <p class="copyright">© 2026 Guntur Raharjo Putra.</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- MODAL POP-UP GAMBAR FULL -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <img class="modal-content" id="imgFull">
+  </div>
+
+  <!-- SCRIPT NAVIGASI & POP-UP GAMBAR -->
+  <script>
+    const slider = document.querySelector(".horizontal-slider");
+    const sections = document.querySelectorAll(".slide-section");
+    const navLi = document.querySelectorAll(".nav-links a");
+
+    // Mengatur klik menu navbar agar layar meluncur ke samping secara halus
+    navLi.forEach((a) => {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = a.getAttribute("href");
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          slider.scrollTo({
+            left: targetSection.offsetLeft,
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+
+    // Menandai menu aktif saat layar di-scroll menyamping
+    slider.addEventListener("scroll", () => {
+      let current = "";
+      const scrollPos = slider.scrollLeft;
+
+      sections.forEach((section) => {
+        if (scrollPos >= section.offsetLeft - 200) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLi.forEach((a) => {
+        a.classList.remove("active-link");
+        if (a.getAttribute("href") === `#${current}`) {
+          a.classList.add("active-link");
+        }
+      });
+    });
+
+    // Fungsi Pembuka & Penutup Pop-up Foto Full
+    function openModal(element) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("imgFull");
+      modal.style.display = "flex";
+      modalImg.src = element.src;
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
