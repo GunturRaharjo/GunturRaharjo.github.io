@@ -56,7 +56,7 @@ a {
 
 .nav-links {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   font-size: 0.875rem;
   font-weight: 500;
   color: #a1a1aa;
@@ -269,4 +269,11 @@ a {
 .nav-links {
   -ms-overflow-style: none;  
   scrollbar-width: none;     
+}
+/* Mengatur konten section Profil & Tentang agar rata atas */
+#profil .slide-content,
+#tentang .slide-content {
+  justify-content: flex-start; 
+  align-items: flex-start;     
+  padding-top: 100px;           
 }
