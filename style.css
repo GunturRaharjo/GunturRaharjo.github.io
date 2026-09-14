@@ -22,41 +22,9 @@ body {
   background-color: var(--bg-color);
   color: var(--text-main);
   font-family: var(--font-family);
-  overflow-x: hidden;
-  width: 100%;
-  min-height: 100vh;
-}
-
-/* Penyesuaian khusus untuk tampilan layar HP (Mobile) */
-@media (max-width: 768px) {
-  body {
-    overflow-y: auto; /* Membolehkan scroll normal ke bawah di HP */
-    height: auto;
-  }
-
-  .horizontal-slider {
-    display: flex;
-    flex-direction: column; /* Mengubah slider horizontal jadi ke bawah di HP agar tidak rusak */
-    width: 100%;
-    height: auto;
-    overflow-x: visible;
-    scroll-snap-type: none;
-  }
-
-  .slide-section {
-    flex: none;
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
-    scroll-snap-align: none;
-    padding: 80px 16px 30px;
-  }
-
-  .portfolio-grid {
-    max-height: none; /* Menghilangkan batasan tinggi grid di HP */
-    overflow-y: visible;
-  }
-}
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
 }
 
 /* ==========================================================================
@@ -622,6 +590,7 @@ body {
     max-height: 48vh;
   }
 }
+
 /* Container Pembungkus Tombol Filter */
 .filter-container {
   display: flex;
@@ -639,10 +608,10 @@ body {
   justify-content: center;
   gap: 8px;
   padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.05); /* Transparan gelap */
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
-  color: #94a3b8; /* Teks agak redup untuk opsi tidak aktif */
+  color: #94a3b8;
   font-size: 0.9rem;
   font-weight: 600;
   font-family: inherit;
@@ -657,7 +626,6 @@ body {
   transition: color 0.25s ease;
 }
 
-/* Efek saat Tombol di-Hover */
 .filter-btn:hover {
   background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
@@ -669,11 +637,10 @@ body {
   color: #ffffff;
 }
 
-/* Tampilan Tombol saat Status AKTIF (Active State) */
 .filter-btn.active {
-  background: rgba(59, 130, 246, 0.15) !important; /* Latar biru soft transparan */
-  border-color: rgba(59, 130, 246, 0.5) !important; /* Border biru */
-  color: #60a5fa !important; /* Teks biru terang */
+  background: rgba(59, 130, 246, 0.15) !important;
+  border-color: rgba(59, 130, 246, 0.5) !important;
+  color: #60a5fa !important;
   box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
 }
 
