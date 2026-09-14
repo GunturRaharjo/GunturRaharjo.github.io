@@ -22,7 +22,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-main);
   font-family: var(--font-family);
-  overflow: hidden; /* Menggunakan horizontal scroll */
+  overflow: hidden;
   height: 100vh;
   width: 100vw;
 }
@@ -64,10 +64,9 @@ body {
   left: 0;
   width: 100%;
   z-index: 100;
-  padding: 20px 0;
-  background: rgba(11, 15, 25, 0.7);
+  padding: 16px 0;
+  background: rgba(11, 15, 25, 0.85);
   backdrop-filter: blur(12px);
-  border-bottom: none; /* Garis bawah resmi dihilangkan */
 }
 
 .nav-container {
@@ -75,31 +74,44 @@ body {
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.logo {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--text-main);
+.logo-profile {
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  letter-spacing: 1px;
+  flex-shrink: 0;
+  margin-right: 25px;
 }
 
-.logo span {
-  color: var(--primary-color);
+.logo-profile img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #007fff;
+  box-shadow: 0 0 10px rgba(0, 127, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-profile img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(0, 127, 255, 0.8);
 }
 
 .nav-links {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 20px;
-  overflow-x: auto; /* Memungkinkan digeser jika menu terlalu panjang */
-  scrollbar-width: none; /* Menyembunyikan scrollbar di Firefox */
-  -ms-overflow-style: none; /* Menyembunyikan scrollbar di IE & Edge lama */
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-/* Menyembunyikan scrollbar di Chrome, Safari, dan Edge baru */
 .nav-links::-webkit-scrollbar {
   display: none;
 }
@@ -111,8 +123,10 @@ body {
   font-weight: 500;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 6px;
-  padding: 8px 14px;
+  padding: 8px 16px;
   border-radius: 8px;
   transition: all 0.25s ease;
 }
@@ -126,7 +140,7 @@ body {
 .nav-item:hover,
 .nav-item.active-link {
   color: #ffffff;
-  background: rgba(58, 30, 30, 0.08);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* ==========================================================================
@@ -150,7 +164,6 @@ body {
   align-items: center;
   justify-content: center;
   padding: 100px 24px 40px;
-  overflow-y: auto;
 }
 
 .container {
@@ -159,17 +172,27 @@ body {
   margin: 0 auto;
 }
 
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
 /* ==========================================================================
-   5. HERO SECTION (MINIMALIST & CLEAN)
+   5. HERO SECTION
    ========================================================================== */
 .hero-clean {
   max-width: 800px;
+  text-align: left;
+  align-items: flex-start;
 }
 
-/* STATUS PILL (LIVE INDICATOR) */
 .status-pill {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 6px 16px;
   border-radius: 9999px;
@@ -178,7 +201,6 @@ body {
   color: #34d399;
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.3px;
   margin-bottom: 24px;
 }
 
@@ -192,51 +214,39 @@ body {
 }
 
 @keyframes pulse-dot {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
-  }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
-  }
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
-/* HEADLINE & TYPOGRAPHY */
 .hero-title {
-  font-size: 3.25rem;
+  font-size: 3rem;
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 20px;
-  letter-spacing: -0.5px;
+  text-align: center;
 }
 
 .gradient-text {
   background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #ec4899 100%);
   -webkit-background-clip: text;
-  background-clip: text; /* Menghilangkan warning di VS Code */
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero-desc {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.7;
   color: var(--text-muted);
   margin-bottom: 32px;
+  text-align: center;
 }
 
-.hero-desc strong {
-  color: var(--text-main);
-  font-weight: 600;
-}
-
-/* INTERACTIVE FEATURE TAGS */
 .hero-tags-wrapper {
   margin-bottom: 36px;
+  width: 100%;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .hero-tag-label {
@@ -245,19 +255,21 @@ body {
   font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 1px;
   margin-bottom: 12px;
+  text-align: center;
 }
 
 .hero-tags {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   gap: 10px;
 }
 
 .hero-tag {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 8px 16px;
   background: rgba(255, 255, 255, 0.03);
@@ -266,8 +278,6 @@ body {
   font-size: 0.85rem;
   font-weight: 600;
   color: #e2e8f0;
-  transition: all 0.25s ease;
-  cursor: default;
 }
 
 .hero-tag svg {
@@ -276,46 +286,8 @@ body {
   color: var(--primary-color);
 }
 
-.hero-tag:hover {
-  background: rgba(59, 130, 246, 0.12);
-  border-color: rgba(59, 130, 246, 0.4);
-  transform: translateY(-2px);
-  color: #ffffff;
-}
-
-/* ACTION BUTTONS */
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-}
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 28px;
-  background: linear-gradient(135deg, var(--primary-color), #2563eb);
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
-  transition: all 0.25s ease;
-}
-
-.btn-primary svg {
-  width: 18px;
-  height: 18px;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
-}
-
 /* ==========================================================================
-   6. GLOBAL COMPONENTS (GLASS CARDS, TITLES, & PORTOFOLIO)
+   6. GLOBAL COMPONENTS (GLASS CARDS & GRID PORTOFOLIO)
    ========================================================================== */
 .glass-card {
   background: var(--card-bg);
@@ -323,34 +295,44 @@ body {
   backdrop-filter: blur(16px);
   border-radius: 16px;
   padding: 24px;
+  text-align: center;
 }
 
 .section-header {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
+  text-align: center;
 }
 
 .section-title {
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .section-desc {
   color: var(--text-muted);
   font-size: 0.95rem;
+  text-align: center;
 }
 
-/* PROFIL SECTION */
+.profile-card {
+  width: 100%;
+  max-width: 700px;
+}
+
 .profile-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  text-align: center;
 }
 
 .profile-list li {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   font-size: 0.95rem;
 }
@@ -362,9 +344,9 @@ body {
   flex-shrink: 0;
 }
 
-/* SOFTWARE MASTERY GRID */
 .software-container {
-  margin-top: 32px;
+  margin-top: 28px;
+  width: 100%;
 }
 
 .software-title {
@@ -372,12 +354,13 @@ body {
   margin-bottom: 16px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
 }
 
 .software-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 16px;
 }
 
@@ -385,6 +368,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 16px;
   text-align: center;
@@ -403,16 +387,16 @@ body {
 /* PORTOFOLIO GRID */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
-  max-height: 65vh;
+  max-height: 52vh;
   overflow-y: auto;
-  padding-right: 8px;
-  scrollbar-width: none; /* Untuk Firefox */
-  -ms-overflow-style: none; /* Untuk IE/Edge */
+  padding: 10px 8px 10px 0;
+  width: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-/* Sembunyikan batang scrollbar untuk Chrome, Safari, dan Edge modern */
 .portfolio-grid::-webkit-scrollbar {
   display: none;
 }
@@ -421,6 +405,8 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   transition: transform 0.25s ease;
 }
 
@@ -430,7 +416,7 @@ body {
 
 .card-image {
   width: 100%;
-  height: 180px;
+  height: 170px;
   overflow: hidden;
   border-radius: 10px;
 }
@@ -448,14 +434,16 @@ body {
 }
 
 .card-body {
-  padding-top: 16px;
+  padding-top: 14px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
   flex-grow: 1;
 }
 
 .card-tag {
-  align-self: flex-start;
   font-size: 0.7rem;
   font-weight: 700;
   color: #60a5fa;
@@ -463,22 +451,24 @@ body {
   padding: 4px 10px;
   border-radius: 6px;
   margin-bottom: 8px;
+  text-align: center;
 }
 
-.card-tag.pink {
-  color: #f472b6;
-  background: rgba(236, 72, 153, 0.1);
+.card-tag.pink { 
+  color: #f472b6; 
+  background: rgba(236, 72, 153, 0.1); 
 }
 
-.card-tag.blue {
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.1);
+.card-tag.blue { 
+  color: #38bdf8; 
+  background: rgba(56, 189, 248, 0.1); 
 }
 
 .card-title {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   margin-bottom: 6px;
+  text-align: center;
 }
 
 .card-desc {
@@ -486,10 +476,12 @@ body {
   color: var(--text-muted);
   line-height: 1.5;
   margin-bottom: 12px;
+  text-align: center;
 }
 
 .tags-group {
   display: flex;
+  justify-content: center;
   gap: 6px;
   margin-top: auto;
 }
@@ -505,16 +497,20 @@ body {
 /* FOOTER & KONTAK */
 .footer-socials {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 14px;
   margin: 28px 0 36px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .social-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  padding: 12px 22px;
+  padding: 12px 24px;
   border-radius: 12px;
   text-decoration: none;
   color: #ffffff;
@@ -524,38 +520,35 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.social-btn i {
-  font-size: 1.25rem;
+.social-btn i { 
+  font-size: 1.25rem; 
 }
 
-/* Warna Asli Brand Sosial Media */
-.social-btn.wa {
-  background: #25d366;
-  border-color: #25d366;
+.social-btn.wa { 
+  background: #25d366; 
+  border-color: #25d366; 
 }
 
-.social-btn.ig {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  border-color: transparent;
+.social-btn.ig { 
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
+  border-color: transparent; 
 }
 
-.social-btn.tt {
-  background: #000000;
-  border-color: rgba(255, 255, 255, 0.2);
+.social-btn.tt { 
+  background: #000000; 
+  border-color: rgba(255, 255, 255, 0.2); 
 }
 
 .social-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  opacity: 0.95;
 }
 
 .copyright {
   font-size: 0.8rem;
   color: var(--text-muted);
-  text-align: center; /* Membuat teks persis di tengah */
-  width: 100%;        /* Memastikan lebar elemen memenuhi kontainer */
-  margin: 0 auto;     /* Menjaga posisi elemen tetap di tengah */
+  text-align: center;
+  width: 100%;
 }
 
 /* MODAL FULL IMAGE */
@@ -579,44 +572,79 @@ body {
   border-radius: 12px;
 }
 
-/* ==========================================================================
-   7. RESPONSIVE DESIGN (TAMPILAN LAYAR KECIL / HP)
-   ========================================================================== */
+/* RESPONSIVE LAYAR HP */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 12px 0;
-  }
-
   .nav-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .nav-links {
-    display: flex;
-    width: 100%;
-    overflow-x: auto;
-    padding-bottom: 4px;
-    gap: 8px;
-  }
-
-  .nav-item {
-    white-space: nowrap;
-    font-size: 0.78rem;
-    padding: 6px 12px;
-    background: rgba(255, 255, 255, 0.04);
-  }
-
-  .hero-title {
-    font-size: 2.25rem;
+    flex-direction: row;
   }
   
-  .hero-desc {
-    font-size: 0.95rem;
+  .nav-links {
+    justify-content: flex-start;
   }
-
+  
+  .hero-title {
+    font-size: 2.1rem;
+  }
+  
   .portfolio-grid {
-    max-height: 60vh;
+    max-height: 48vh;
   }
+}
+/* Container Pembungkus Tombol Filter */
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+/* Style Dasar Tombol Tampilan/Filter */
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.05); /* Transparan gelap */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  color: #94a3b8; /* Teks agak redup untuk opsi tidak aktif */
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.filter-btn svg {
+  color: #94a3b8;
+  transition: color 0.25s ease;
+}
+
+/* Efek saat Tombol di-Hover */
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.filter-btn:hover svg {
+  color: #ffffff;
+}
+
+/* Tampilan Tombol saat Status AKTIF (Active State) */
+.filter-btn.active {
+  background: rgba(59, 130, 246, 0.15) !important; /* Latar biru soft transparan */
+  border-color: rgba(59, 130, 246, 0.5) !important; /* Border biru */
+  color: #60a5fa !important; /* Teks biru terang */
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+.filter-btn.active svg {
+  color: #60a5fa !important;
 }
