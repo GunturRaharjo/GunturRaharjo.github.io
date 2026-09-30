@@ -1,14 +1,14 @@
 /* ==========================================================================
-   1. VARIABLES & RESET
+   1. VARIABLES & RESET (Professional Modern Theme)
    ========================================================================== */
 :root {
-  --bg-color: #0b0f19;
-  --card-bg: rgba(255, 255, 255, 0.03);
+  --bg-color: #0b0f19;            /* Warna dasar hitam kebiruan yang sangat gelap & mewah */
+  --card-bg: #111827;             /* Warna kartu yang sedikit lebih terang dari background */
   --card-border: rgba(255, 255, 255, 0.08);
-  --primary-color: #3b82f6;
-  --accent-pink: #ec4899;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
+  --primary-color: #38bdf8;       /* Aksen Biru Langit Modern (bisa diganti putih/silver jika ingin super minimalis) */
+  --accent-pink: #a855f7;         /* Aksen ungu elegan sebagai pemanis */
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
@@ -28,35 +28,7 @@ body {
 }
 
 /* ==========================================================================
-   2. BACKGROUND GLOW ANIMATED
-   ========================================================================== */
-.bg-glow {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(120px);
-  z-index: -1;
-  opacity: 0.25;
-  pointer-events: none;
-}
-
-.blob-1 {
-  width: 400px;
-  height: 400px;
-  background: var(--primary-color);
-  top: -100px;
-  left: -100px;
-}
-
-.blob-2 {
-  width: 450px;
-  height: 450px;
-  background: var(--accent-pink);
-  bottom: -150px;
-  right: -100px;
-}
-
-/* ==========================================================================
-   3. NAVBAR
+   2. NAVBAR
    ========================================================================== */
 .navbar {
   position: fixed;
@@ -64,9 +36,10 @@ body {
   left: 0;
   width: 100%;
   z-index: 100;
-  padding: 16px 0;
+  padding: 14px 0;
   background: rgba(11, 15, 25, 0.85);
   backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--card-border);
 }
 
 .nav-container {
@@ -88,25 +61,25 @@ body {
 }
 
 .logo-profile img {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #007fff;
-  box-shadow: 0 0 10px rgba(0, 127, 255, 0.4);
+  border: 2px solid var(--text-main);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo-profile img:hover {
   transform: scale(1.08);
-  box-shadow: 0 0 15px rgba(0, 127, 255, 0.8);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 16px;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -119,14 +92,13 @@ body {
 .nav-item {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 500;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   gap: 6px;
-  padding: 8px 16px;
+  padding: 8px 14px;
   border-radius: 8px;
   transition: all 0.25s ease;
 }
@@ -144,7 +116,7 @@ body {
 }
 
 /* ==========================================================================
-   4. HORIZONTAL SLIDER STRUCTURE
+   3. HORIZONTAL SLIDER STRUCTURE
    ========================================================================== */
 .horizontal-slider {
   display: flex;
@@ -163,7 +135,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 24px 40px;
+  padding: 90px 24px 30px;
 }
 
 .container {
@@ -181,7 +153,7 @@ body {
 }
 
 /* ==========================================================================
-   5. HERO SECTION
+   4. HERO SECTION
    ========================================================================== */
 .hero-clean {
   max-width: 800px;
@@ -193,60 +165,56 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 6px 16px;
+  gap: 8px;
+  padding: 6px 14px;
   border-radius: 9999px;
-  background-color: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.25);
-  color: #34d399;
-  font-size: 0.78rem;
+  background-color: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: var(--primary-color);
+  font-size: 0.75rem;
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .pulsing-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #10b981;
+  width: 7px;
+  height: 7px;
+  background-color: var(--primary-color);
   border-radius: 50%;
-  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
   animation: pulse-dot 1.8s infinite;
 }
 
 @keyframes pulse-dot {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(56, 189, 248, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   text-align: center;
+  color: #ffffff;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #ec4899 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
 }
 
 .hero-desc {
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.6;
   color: var(--text-muted);
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   text-align: center;
 }
 
 .hero-tags-wrapper {
-  margin-bottom: 36px;
+  margin-bottom: 24px;
   width: 100%;
-  align-items: flex-start;
-  text-align: left;
 }
 
 .hero-tag-label {
@@ -255,77 +223,79 @@ body {
   font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   text-align: center;
+  letter-spacing: 0.05em;
 }
 
 .hero-tags {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 10px;
+  justify-content: center;
+  gap: 8px;
 }
 
 .hero-tag {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.03);
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 12px;
-  font-size: 0.85rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: #e2e8f0;
+  color: #e5e7eb;
 }
 
 .hero-tag svg {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   color: var(--primary-color);
 }
 
 /* ==========================================================================
-   6. GLOBAL COMPONENTS (GLASS CARDS & GRID PORTOFOLIO)
+   5. GLOBAL COMPONENTS (GLASS CARDS & GRID PORTOFOLIO)
    ========================================================================== */
 .glass-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   backdrop-filter: blur(16px);
-  border-radius: 16px;
-  padding: 24px;
+  border-radius: 14px;
+  padding: 20px;
   text-align: center;
 }
 
 .section-header {
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   text-align: center;
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 800;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   text-align: center;
+  color: #ffffff;
 }
 
 .section-desc {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   text-align: center;
 }
 
 .profile-card {
   width: 100%;
-  max-width: 700px;
+  max-width: 650px;
 }
 
 .profile-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   text-align: center;
 }
 
@@ -333,35 +303,37 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  font-size: 0.95rem;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #d1d5db;
 }
 
 .profile-list svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   color: var(--primary-color);
   flex-shrink: 0;
 }
 
 .software-container {
-  margin-top: 28px;
+  margin-top: 20px;
   width: 100%;
 }
 
 .software-title {
-  font-size: 1.1rem;
-  margin-bottom: 16px;
+  font-size: 1rem;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
+  color: #ffffff;
 }
 
 .software-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
 }
 
 .software-card {
@@ -369,29 +341,33 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 16px;
+  gap: 8px;
+  padding: 12px;
   text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
 }
 
 .software-card img {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
 }
 
 .software-card span {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
+  color: var(--text-muted);
 }
 
 /* PORTOFOLIO GRID */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
-  max-height: 52vh;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  max-height: 50vh;
   overflow-y: auto;
-  padding: 10px 8px 10px 0;
+  padding: 6px 4px;
   width: 100%;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -402,23 +378,29 @@ body {
 }
 
 .card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 14px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .card-image {
   width: 100%;
-  height: 170px;
+  height: 150px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 8px;
+  background: #030712;
 }
 
 .card-image img {
@@ -434,7 +416,7 @@ body {
 }
 
 .card-body {
-  padding-top: 14px;
+  padding-top: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -444,19 +426,18 @@ body {
 }
 
 .card-tag {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  color: #60a5fa;
-  background: rgba(59, 130, 246, 0.1);
-  padding: 4px 10px;
+  color: var(--primary-color);
+  background: rgba(56, 189, 248, 0.1);
+  padding: 3px 8px;
   border-radius: 6px;
-  margin-bottom: 8px;
-  text-align: center;
+  margin-bottom: 6px;
 }
 
 .card-tag.pink { 
   color: #f472b6; 
-  background: rgba(236, 72, 153, 0.1); 
+  background: rgba(244, 114, 182, 0.1); 
 }
 
 .card-tag.blue { 
@@ -465,18 +446,17 @@ body {
 }
 
 .card-title {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  margin-bottom: 6px;
-  text-align: center;
+  margin-bottom: 4px;
+  color: #ffffff;
 }
 
 .card-desc {
-  font-size: 0.825rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
-  line-height: 1.5;
-  margin-bottom: 12px;
-  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 10px;
 }
 
 .tags-group {
@@ -487,11 +467,76 @@ body {
 }
 
 .tag-item {
-  font-size: 0.7rem;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 2px 8px;
+  font-size: 0.65rem;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 2px 6px;
   border-radius: 4px;
   color: var(--text-muted);
+}
+
+/* VIDEO STYLING */
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* FILTER TOMBOL */
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.filter-btn svg {
+  color: var(--text-muted);
+  transition: color 0.25s ease;
+  width: 14px;
+  height: 14px;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.filter-btn:hover svg {
+  color: #ffffff;
+}
+
+.filter-btn.active {
+  background: rgba(56, 189, 248, 0.15) !important;
+  border-color: rgba(56, 189, 248, 0.5) !important;
+  color: var(--primary-color) !important;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+}
+
+.filter-btn.active svg {
+  color: var(--primary-color) !important;
 }
 
 /* FOOTER & KONTAK */
@@ -499,8 +544,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 14px;
-  margin: 28px 0 36px;
+  gap: 12px;
+  margin: 20px 0 24px;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -509,19 +554,20 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 12px 24px;
-  border-radius: 12px;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 10px;
   text-decoration: none;
   color: #ffffff;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
   transition: all 0.25s ease;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
 }
 
 .social-btn i { 
-  font-size: 1.25rem; 
+  font-size: 1.1rem; 
 }
 
 .social-btn.wa { 
@@ -540,12 +586,12 @@ body {
 }
 
 .social-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  opacity: 0.9;
 }
 
 .copyright {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   text-align: center;
   width: 100%;
@@ -574,16 +620,12 @@ body {
 
 /* RESPONSIVE LAYAR HP */
 @media (max-width: 768px) {
-  .nav-container {
-    flex-direction: row;
-  }
-  
-  .nav-links {
-    justify-content: flex-start;
-  }
-  
   .hero-title {
     font-size: 2.1rem;
+  }
+  
+  .slide-section {
+    padding: 80px 16px 20px;
   }
   
   .portfolio-grid {
@@ -591,59 +633,213 @@ body {
   }
 }
 
-/* Container Pembungkus Tombol Filter */
-.filter-container {
+/* ==========================================================================
+   CUSTOM REDESIGN: PROFILE LIST & SOFTWARE SKILL (Non-AI Look)
+   ========================================================================== */
+
+/* 1. Profile Card Redesign */
+.profile-card.glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px 28px;
+  max-width: 720px;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(16px);
+}
+
+.profile-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-list li {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 20px;
-  margin-bottom: 24px;
-}
-
-/* Style Dasar Tombol Tampilan/Filter */
-.filter-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--card-border);
+  padding: 12px 16px;
   border-radius: 12px;
-  color: #94a3b8;
-  font-size: 0.9rem;
-  font-weight: 600;
-  font-family: inherit;
-  cursor: pointer;
-  backdrop-filter: blur(8px);
   transition: all 0.25s ease;
-  outline: none;
 }
 
-.filter-btn svg {
-  color: #94a3b8;
-  transition: color 0.25s ease;
+.profile-list li:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateX(3px);
 }
 
-.filter-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+/* Kotak kecil untuk ikon Lucide agar terlihat berkelas */
+.profile-list li i {
+  width: 20px;
+  height: 20px;
+  color: var(--primary-color);
+  background: rgba(56, 189, 248, 0.1);
+  padding: 8px;
+  box-sizing: content-box;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.profile-list li div {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.profile-list li div strong {
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+/* 2. Software Container & Title Redesign */
+.software-container {
+  margin-top: 24px;
+  width: 100%;
+  max-width: 720px;
+  text-align: left;
+}
+
+.software-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.software-title i {
+  width: 18px;
+  height: 18px;
+  color: var(--primary-color);
+}
+
+/* Grid untuk ikon software di bawahnya agar sejajar rapi */
+.software-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.software-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 14px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.software-card:hover {
   transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(255, 255, 255, 0.04);
 }
 
-.filter-btn:hover svg {
+.software-card img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.software-card span {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Responsif untuk layar HP */
+@media (max-width: 768px) {
+  .profile-card.glass-card {
+    padding: 18px;
+  }
+  .profile-list li {
+    padding: 10px 12px;
+  }
+  .software-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Styling judul tanpa ikon yang terlihat sangat clean & profesional */
+.software-container {
+  margin-top: 24px;
+  width: 100%;
+  max-width: 720px;
+  text-align: left;
+}
+
+.section-tag-pro {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  opacity: 0.9;
+}
+
+.software-title-pro {
+  font-size: 1.15rem;
+  font-weight: 700;
   color: #ffffff;
+  letter-spacing: -0.01em;
+}
+/* ==========================================================================
+   FIX PAKSA: BUAT KARTU PROFIL & JUDUL SOFTWARE JADI RATA KIRI PENUH
+   ========================================================================== */
+
+/* 1. Paksa pembungkus konten slide agar isi di dalamnya rata kiri */
+.slide-content {
+  align-items: flex-start !important; /* Membatalkan posisi tengah */
+  text-align: left !important;
 }
 
-.filter-btn.active {
-  background: rgba(59, 130, 246, 0.15) !important;
-  border-color: rgba(59, 130, 246, 0.5) !important;
-  color: #60a5fa !important;
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+/* 2. Paksa kartu profil agar posisinya di sebelah kiri (tidak di tengah) */
+.profile-card.glass-card {
+  width: 100% !important;
+  max-width: 720px !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important; /* Mendorong sisa ruang ke kanan */
 }
 
-.filter-btn.active svg {
-  color: #60a5fa !important;
+/* 3. Paksa isi list di dalam kartu profil rata kiri */
+.profile-list {
+  text-align: left !important;
+  width: 100%;
+}
+
+.profile-list li {
+  text-align: left !important;
+  justify-content: flex-start !important; /* Posisi item di dalam list rata kiri */
+}
+
+.profile-list li div {
+  text-align: left !important;
+}
+
+/* 4. Paksa container & judul Software Skill rata kiri */
+.software-container {
+  width: 100% !important;
+  max-width: 720px !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+.software-title {
+  text-align: left !important;
+  justify-content: flex-start !important;
 }
